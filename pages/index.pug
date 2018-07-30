@@ -1,0 +1,129 @@
+doctype html
+
+mixin job(employer, position, start, end, location)
+  section.employer
+    header
+      h5
+        span.position= position
+        | , 
+        span.company= employer
+        |   | 
+        span.location= location
+      aside
+        span.time
+          = start
+          | &mdash;
+          = end
+        
+    article
+      block
+
+mixin project(name, customer, start, end)
+  section.project
+    header
+      h5
+        span.company= name
+        | ,  
+        span.position= customer
+      aside
+        span.time
+          = start
+          | &mdash;
+          = end
+    article
+      block
+
+
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=8.5in, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Resume
+    link(href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet")
+  body
+    header
+      section.name-section
+        h1.name Alexander Songe
+      section.contact-info
+        address 1214 Julia St, New Iberia, LA 70560
+        div
+          a(href="tel:+13373227300") 337-322-7300
+          |   | 
+          a(href="mailto:a@songe.me") a@songe.me
+    main
+      article
+        section.bio
+          p A full-stack senior web application developer with a wide range of experience and interests. I enjoy working in teams, but can also work on my own. I have experience creating processes around development, CI, and deployment workflows. I enjoy learning new things, and am always interested in jumping into new domains. In my spare time, I enjoy cooking and woodworking with hand tools.
+        section.experience
+          h2 Employment Experience
+          +job('Redball Technology', 'Contractor', 'May 2017', 'Current', 'Broussard, LA')
+            p At this small marketing and tech firm, I was responsible for coding out website functionality in a CMS, but also working on short-term software projects for clients outlined below.
+          +job('Sow-Organic/OMT Tech', 'Senior Developer', 'Mar 2015', 'Jan 2017', 'Remote')
+            p Start-up focused on certification workflow for USDA Organic Certification. Business centered around React-powered single page application (SPA). Farmers would fill out all their paperwork online, and the certifier would approve it online as well. At first, I took on developing the front end of the application, and then moved to replace the backend and API (formerly in C) with Elixir Phoenix and live websockets.
+          +job('Aristotle\'s Alexander', 'Senior Developer', 'Oct 2014', 'Dec 2014', 'Lafayette, LA')
+            p I joined this software development services shop targeting the Oil and Gas Industry. Worked on an offline web application for equipment rental systems that integrated with their previous proprietary solution. In addition to the front-wend work, I wrote a two-way data synchronization server between CouchDB and MS Access.
+          +job('Global Security Systems', 'Senior Developer', 'Apr 2012', 'Apr 2014', 'Lafayette, LA')
+            p GSS sold systems to state and local governments for emergency alerts and crisis management. I was responsible for several projects:
+            ul
+              li Reverse 911 system that integrated with existing product
+              li Created and documented sub-protocol to broadcast weather forecasts over the RBDS FM radio protocol
+              li Created/maintained various websites for system and product sales
+              li Created geospatial maps to show reception for our RBDS products
+          +job('Failsafe Controls', 'System Integrator', 'Dec 2011', 'Apr 2012', 'New Iberia, LA')
+            p Failsafe Controls provides contract services to the oil and gas industry focused on monitoring and automation based on the Ignition platform. I was responsible for extending functionality and optimizing problem-spots in their custom control panel, some of which was in Jython (Python on the JVM). I achieved performance wins of 100x and more.
+          +job('BitSizzle', 'Co-Founder', 'Feb 2011', 'Dec 2011', 'Lafayette, LA')
+            p Startup that provided streaming services for radio stations
+            ul
+              li Wrote middleware between Icecast and Shoutcast Streaming services to hook into custom authentication schemes
+              li Leveraged Icecast to interactively display real-time data with live visualizations on the web
+              li Created a web player library using HTML5 audio that defaulted a 2KB Flash object and created a statistics database with visualizations.
+
+        section.projects
+          h2 Projects
+          p Recent short-term projects and open source work
+          +project('Review Solicitation Software', 'Redball Technology', 'Dec 2017', 'Apr 2018')
+            p Small, focused piece of software written during slow contract work periods to improve reviews for business and restaurants on Facebook, Google Maps, Yelp, TripAdvisor, etc. Someone would service a customer and ask for their mobile phone number. They'd then send them a link to review the business. Supported multiple tenants so that advertising agencies could resell to their own businesses.
+          +project('Drop-ship Automation', 'Redball Technology', 'Jun 2017', 'Oct 2017')
+            p Motorcycle and ATV vehicle and accessory drop-shipping site needed to automatically keep track of an upstream inventory of thousands of items and publish products onto Shopify.com. This included downloading and managing tens of thousands of images and product variants in a continuous process with rate limits on both sides (5 requests per second from manufacturers, 2 requests per second to Shopify).
+          +project('Loom', 'Open Source', 'Jan 2015', 'Current')
+            p I wrote a library for "CRDTs", a technology built for sharing data between disconnected components that always merges back together without losing data. I gave a conference presentation on the subject at ElixirConf 2015 (CRDT: Datatype for the Apocalypse).
+          +project('Phoenix PubSub Presence', 'Open Source', 'Nov 2015', 'Current')
+            p I met with the library authors for Phoenix at ElixirConf 2015 and helped them build a system for keeping track of live connections to solve "presence" in online servers, even in the face of split-brain clusters (where only some of the servers could talk to some of the others). This helped solve a problem that the community had issues with, and is being used in everything from IoT applications to dating sites.
+
+      aside
+        section
+          h3 Languages
+          dl
+            dt PHP
+            dd 10+ years
+            dt HTML/CSS
+            dd 10+ years
+            dt Javascript
+            dd 10+ years
+            dt Node
+            dd 5 years
+            dt Elixir/Erlang
+            dd 7 years
+            dt Bash
+            dd 5 years
+            dt Python
+            dd 3 years
+            dt Sass
+            dd 2 years
+          h3 Platforms
+          ul
+            li React + Redux + ImmutableJS
+            li Elixir Phoenix + Ecto
+            li Django
+            li Webpack + Sass/Less
+          h3 Databases
+          dl
+            dt Mysql
+            dd 10+ years
+            dt Postgresql
+            dd 10+ years
+            dt Riak
+            dd 2 years
+            dt CouchDB
+            dd 1 year

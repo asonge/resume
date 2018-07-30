@@ -1,0 +1,155 @@
+@media screen {
+  body {
+    background: #fff;
+    width: 8.5in;
+    padding: 0.5in;
+    margin: 15px auto;
+    box-shadow: 0 0 10px rgba(#000, 0.5);
+  }
+}
+@page {
+  margin: 0.5in;
+}
+a {
+  color: #123342;
+  text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+}
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 16px;
+}
+body {
+  font: 14px 'Roboto Condensed', sans-serif;
+  > header {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    border-left: 15px solid #3b5e48;
+    border-bottom: 5px solid #3b5e48;
+    padding-left: 15px;
+
+    h1 {
+      margin: 0;
+    }
+
+    .contact-info {
+      text-align: right;
+    }
+  }
+}
+
+section.bio {
+  p {
+    margin-top: 0;
+  }
+}
+
+section.employer,
+section.project {
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: bottom;
+
+    .location {
+      font-weight: normal;
+    }
+
+    .time {
+      line-height: 20px;
+    }
+  }
+
+  article > p:first-child {
+    margin-top: 0;
+  }
+
+  h5 {
+    margin: 0;
+  }
+  p + ul {
+    padding-top: 0;
+  }
+
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+
+  h2 {
+    margin: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+
+  > * > section:first-child {
+    margin-top: 15px;
+  }
+  
+  > article {
+    flex-basis: 1;
+
+    > section {
+      padding-right: 15px;
+    }
+  }
+
+  > aside {
+    background-color: #3b5e48;
+    color: #fff;
+    padding: 0 0.125in;
+    flex-basis: 0;
+    min-width: 1.4in;
+
+    h3 {
+      font-weight: 500;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+      dd {
+        margin: 0;
+        text-align: right;
+      }
+      dt,dd {
+        width: 50%;
+      }
+    }
+
+    ul {
+      padding-left: 15px;
+
+      li {
+        list-style: none;
+        position: relative;
+
+        &:before {
+          content: '\2713';
+          position: absolute;
+          left: -15px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
